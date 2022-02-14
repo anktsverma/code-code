@@ -27,10 +27,8 @@ class Solution {
     vector<int> bfsOfGraph(int V, vector<int> adj[]) {
         // Code here
         vector<int>bfs;
-        vector<int>vis(V,0);
+        vector<int>vis(V+1,0);
         bfsFun(0,V,adj,bfs,vis);
-  
-        
         return bfs;
     }
 };
