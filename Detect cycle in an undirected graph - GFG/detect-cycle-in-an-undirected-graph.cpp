@@ -28,8 +28,8 @@ class Solution {
     }
     bool isCycle(int V, vector<int> adj[]) {
         // Code here
-        vector<int>vis(V+1,0);
-        for(int i=1;i<V;i++){
+        vector<int>vis(V,0);
+        for(int i=0;i<V;i++){
             if(!vis[i]){
                 if(cyclebfs(i,V,adj,vis)){
                     return true;
