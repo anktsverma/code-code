@@ -31,10 +31,7 @@ int remAnagram(string str1, string str2)
    // Your code goes here
    int arr[26]={0};
    if(str1.length()>str2.length()){
-       string temp;
-       temp=str1;
-       str1=str2;
-       str2=temp;
+     swap(str1,str2);
    }
    for(int i=0;i<str2.length();i++){
        arr[str2[i]-'a']++;
