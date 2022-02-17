@@ -43,9 +43,9 @@ int remAnagram(string str1, string str2)
    for(int i=0;i<str1.length();i++){
        arr[str1[i]-'a']--;
    }
-   int op=0;
+   int deletions=0;
    for(int i=0;i<26;i++){
-       op+=abs(arr[i]);
+       deletions+=abs(arr[i]);
    }
-   return op;
+   return deletions;
 }
