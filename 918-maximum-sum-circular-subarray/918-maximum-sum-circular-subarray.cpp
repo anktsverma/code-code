@@ -48,7 +48,7 @@ public:
                currSum=0;
            }
        }
-        currSum=0;
+       currSum=0;
        for(int i=0;i<nums.size();i++){
            currSum+=nums[i];
            Max1=max(Max1,currSum);
