@@ -10,6 +10,7 @@ class Solution {
 public:
     bool hasCycle(ListNode *head) {
         if(head==NULL or head->next==NULL) return false;
+        
         ListNode *fast=head;
         ListNode *slow=head;
         
@@ -18,6 +19,7 @@ public:
             slow=slow->next;
             if(slow==fast ) return true;
         }
+        
         return false;
     }
 };
