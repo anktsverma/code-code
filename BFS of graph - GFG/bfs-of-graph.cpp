@@ -6,16 +6,16 @@ using namespace std;
 class Solution {
   public:
     // Function to return Breadth First Traversal of given graph.
-    void bfs(vector<int>&vis,vector<int>adj[],vector<int>&
-    storebfs){
+    
+    void bfs(vector<int>&storeBfs,vector<int>&vis,vector<int>adj[]){
         queue<int>q;
         q.push(0);
         vis[0]=1;
-        
         while(!q.empty()){
             int node=q.front();
-            storebfs.push_back(node);
+            storeBfs.push_back(node);
             q.pop();
+            
             for(auto it:adj[node]){
                 if(!vis[it]){
                     q.push(it);
@@ -27,11 +27,12 @@ class Solution {
     
     vector<int> bfsOfGraph(int V, vector<int> adj[]) {
         // Code here
-        vector<int>storebfs;
+        vector<int>storeBfs;
         vector<int>vis(V,0);
-        bfs(vis,adj,storebfs);
-        return storebfs;
+        bfs(storeBfs,vis,adj);
+        return storeBfs;
     }
+    
 };
 
 // { Driver Code Starts.
