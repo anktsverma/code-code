@@ -5,32 +5,30 @@ using namespace std;
  // } Driver Code Ends
 class Solution {
 public:
-    bool checkBipartite(int i,vector<int>adj[],vector<int>&vis){
+    bool checkBipartite(int i,vector<int>adj[],vector<int>&color){
         queue<int>q;
         q.push(i);
-        vis[i]=1;
+        color[i]=1;
         while(!q.empty()){
             int node=q.front();
             q.pop();
             for(auto it:adj[node]){
-                if(vis[it]==-1){
+                if(color[it]==-1){
+                    color[it]=1-color[node];
                     q.push(it);
-                    vis[it]=1-vis[node];
                 }
-                else if(vis[it]==vis[node]){
-                    return false;
-                }
+                else if(color[it]==color[node]) return false;
             }
-                
         }
         return true;
     }
+    
 	bool isBipartite(int V, vector<int>adj[]){
 	    // Code here
-	    vector<int>vis(V,-1);
+	    vector<int>color(V,-1);
 	    for(int i=0;i<V;i++){
-	        if(vis[i]==-1){
-	            if(!checkBipartite(i,adj,vis)) return false;
+	        if(color[i]==-1){
+	            if(!checkBipartite(i,adj,color)) return false;
 	        }
 	    }
 	    return true;
