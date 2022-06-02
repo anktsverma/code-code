@@ -21,6 +21,7 @@ public:
     // }
     
     vector<int> inorderTraversal(TreeNode* root) {
+        if(!root) return {};
         vector<int>ans;
         stack<TreeNode*> st;
         TreeNode *node=root;
