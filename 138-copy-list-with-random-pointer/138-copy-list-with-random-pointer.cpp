@@ -37,7 +37,7 @@ public:
         Node *clone=copy;
         while(org!=NULL ){
             org->next=org->next->next;
-            copy->next=copy->next!=NULL?copy->next->next:copy->next;
+            copy->next=copy->next!=NULL?copy->next->next:NULL;
             org=org->next;
             copy=copy->next;
         }
