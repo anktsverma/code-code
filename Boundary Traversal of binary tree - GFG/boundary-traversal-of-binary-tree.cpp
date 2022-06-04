@@ -139,8 +139,10 @@ public:
     vector <int> boundary(Node *root)
     {
         //Your code here
+        if(!root) return {};
         if(root->left==NULL and root->right==NULL) return {root->data};
         vector<int>ans;
+        
         ans.push_back(root->data);
         leftBoundary(root->left,ans);
         bottomBoundary(root,ans);
