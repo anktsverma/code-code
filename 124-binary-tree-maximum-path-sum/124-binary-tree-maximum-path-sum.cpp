@@ -17,7 +17,7 @@ public:
         return maxSum;
     }
     
-    int solve(TreeNode* root,int &maxSum){
+    int solve(TreeNode *root,int &maxSum){
         if(!root) return 0;
         int l=max(0,solve(root->left,maxSum));
         int r=max(0,solve(root->right,maxSum));
