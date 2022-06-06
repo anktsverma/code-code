@@ -9,16 +9,20 @@ public:
         // code here 
         long long maxSum=INT_MIN;
         long long sum=0;
-        for(int i=0;i<K;i++){
-            sum+=Arr[i];
-        }
-        maxSum=sum;
+        
         int i=0;
-        int j=K;
+        int j=0;
         while(j<N){
-            sum+=Arr[j++];
-            sum-=Arr[i++];
-            maxSum=max(maxSum,sum);
+            sum+=Arr[j];
+            if(j-i+1<K){
+                j++;
+            }
+            else if(j-i+1==K){
+                maxSum=max(maxSum,sum);
+                sum-=Arr[i];
+                i++;
+                j++;
+            }
         }
         return maxSum;
     }
