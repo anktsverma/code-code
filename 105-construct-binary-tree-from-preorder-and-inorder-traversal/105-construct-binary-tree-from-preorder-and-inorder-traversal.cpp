@@ -21,7 +21,9 @@ public:
         return root;
     }
     
-    TreeNode *buildTreeUtil(vector<int>&preorder,int preStart,int preEnd,vector<int>&inorder,int inStart,int inEnd,map<int,int>&mp){
+    TreeNode *buildTreeUtil(
+        vector<int>&preorder,int preStart,int preEnd,vector<int>&inorder,int inStart,int               inEnd,map<int,int>&mp){
+        
         if(preStart>preEnd or inStart>inEnd) return NULL;
         
         TreeNode *root=new TreeNode(preorder[preStart]);
