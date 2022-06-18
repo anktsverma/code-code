@@ -36,9 +36,9 @@ public:
         }
         if(count(nums.begin(),nums.end(),num1)>(nums.size()/3))ans.push_back(num1);
         if(count(nums.begin(),nums.end(),num2)>(nums.size()/3)){
-            if(num1!=num2)
+          if(num1!=num2)
             ans.push_back(num2);
-            }
+        }
         return ans;
     }
 };
